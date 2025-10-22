@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pantry</title>
+</head>
+<body>
+<h1>Welcome to my Pantry</h1>
+<a href="foods/new">New</a>
+<% users.forEach((entry) => { %>
+    <h2><%= entry.username%></h2>
+    <form method="GET" action="foods/show/<%= entry.id%>">
+        <button type="submit">View pantry</button>
+    </form>
+<% })%>
+</body>
+</html>

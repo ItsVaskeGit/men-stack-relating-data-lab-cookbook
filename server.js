@@ -11,6 +11,7 @@ const passUserToView = require('./middleware/pass-user-to-view');
 
 const foodsController = require('./controllers/foods.js');
 const authController = require('./controllers/auth.js');
+const usersController = require('./controllers/users.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -48,6 +49,8 @@ app.get('/vip-lounge', (req, res) => {
 app.use('/users/:userId/foods', foodsController);
 
 app.use('/auth', authController);
+
+app.use('/community', usersController);
 
 app.use(passUserToView);
 
